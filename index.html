@@ -6,122 +6,13 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 </head>
-<body class="h-100">
-            <pre>
-import java.util.LinkedList;
-import java.util.Scanner;
-
-public class LinkedListTransform {
-
-    static class Node {
-        String value;
-        Node next;
-
-        public Node(String value) {
-            this.value = value;
-            this.next = null;
-        }
-    }
-
-    static class SinglyLinkedList {
-        Node head;
-
-        // Add a node to the end of the list
-        public void append(String value) {
-            Node newNode = new Node(value);
-            if (head == null) {
-                head = newNode;
-            } else {
-                Node current = head;
-                while (current.next != null) {
-                    current = current.next;
-                }
-                current.next = newNode;
-            }
-        }
-
-        // Print the list
-        public void printList() {
-            Node current = head;
-            while (current != null) {
-                System.out.print(current.value);
-                if (current.next != null) {
-                    System.out.print(" -> ");
-                }
-                current = current.next;
-            }
-            System.out.println();
-        }
-
-        // Transform the list
-        public void transform() {
-            Node uppercaseHead = null, uppercaseTail = null;
-            Node lowercaseHead = null, lowercaseTail = null;
-
-            Node current = head;
-
-            while (current != null) {
-                Node nextNode = current.next; // Save the next node
-                current.next = null; // Disconnect the current node
-
-                if (Character.isLowerCase(current.value.charAt(0))) {
-                    // Add to the lowercase list
-                    if (lowercaseHead == null) {
-                        lowercaseHead = lowercaseTail = current;
-                    } else {
-                        lowercaseTail.next = current;
-                        lowercaseTail = current;
-                    }
-                } else {
-                    // Add to the uppercase list
-                    if (uppercaseHead == null) {
-                        uppercaseHead = uppercaseTail = current;
-                    } else {
-                        uppercaseTail.next = current;
-                        uppercaseTail = current;
-                    }
-                }
-
-                current = nextNode; // Move to the next node
-            }
-
-            // Combine the uppercase and lowercase lists
-            if (uppercaseTail != null) {
-                uppercaseTail.next = lowercaseHead;
-                head = uppercaseHead;
-            } else {
-                head = lowercaseHead;
-            }
-        }
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Read input
-        int n = Integer.parseInt(scanner.nextLine()); // Number of words
-        SinglyLinkedList list = new SinglyLinkedList();
-
-        for (int i = 0; i < n; i++) {
-            String word = scanner.nextLine();
-            list.append(word);
-        }
-
-        // Print original list
-        System.out.println("Before transformation:");
-        list.printList();
-
-        // Transform the list
-        list.transform();
-
-        // Print transformed list
-        System.out.println("After transformation:");
-        list.printList();
-
-        scanner.close();
-    }
-}
-
-        </pre>
-
+<body class="h-100" style="background-color: black;">
+    <section class="section h-100 d-flex justify-content-center text-white align-items-center">
+        <div class="container">
+            <div class="content-wrapper text-center text-white">
+                <h1 class="title">Under Construction</h1>
+                <p class="text">Contact us through <a class="text-white" href="mailto:contact@bakiforhire.com"><b>contact@bakiforhire.com</b></a></p>
+            </div>
+        </div>
+    </section>
 </body></html>
